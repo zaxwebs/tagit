@@ -93,7 +93,7 @@ const App = () => {
   return (
     <Container>
       <Row>
-        <Col className="pt-5">
+        <Col md={6} className="pt-5">
           <div id="intro">
             <h1>Welcome to TagIt!</h1>
             <p>
@@ -184,7 +184,7 @@ const App = () => {
             </Form>
           </div>
         </Col>
-        <Col className="pt-5">
+        <Col md={6} className="pt-5">
           {networks.map(network => {
             if (network.selected) {
               const taggified = taggify(network.characters)
