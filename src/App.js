@@ -187,7 +187,8 @@ const App = () => {
                     {network.name} Post{' '}
                     {taggified.length > network.characters && (
                       <small className="text-danger">
-                        (Your post text exceeds character limit)
+                        (Your post text exceeds character limit by{' '}
+                        {taggified.length - network.characters}.)
                       </small>
                     )}
                   </Form.Label>
