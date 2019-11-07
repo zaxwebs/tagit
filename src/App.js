@@ -7,7 +7,9 @@ const App = () => {
   const [post, setPost] = useState('')
   const [networks, setNetworks] = useState(initialNetworks)
   const [categories, setCategories] = useState(initialCategories)
-  const [selectedCategory, setSelectedCategory] = useState(categories[0].name)
+  const [selectedCategory, setSelectedCategory] = useState(
+    categories[0].id.toString()
+  )
   const [maxPostSize, setMaxPostSize] = useState(null)
 
   const getIndex = (value, arr, prop) => {
@@ -17,6 +19,10 @@ const App = () => {
       }
     }
     return -1 //to handle the case where the value doesn't exist
+  }
+
+  const getCategoryObject = (id = selectedCategory) => {
+    return categories.filter(category => category.id.toString() === id)[0]
   }
 
   const toggleNetworkSelect = e => {
@@ -62,24 +68,13 @@ const App = () => {
   }
 
   const taggify = limit => {
+    let separator = ''
+    if (post !== '') separator = '\n'
     if (limit === null) {
-      if (post === '') {
-        return categories.filter(
-          category => category.name === selectedCategory
-        )[0].tags
-      } else {
-        return (
-          post +
-          '\n' +
-          categories.filter(category => category.name === selectedCategory)[0]
-            .tags
-        )
-      }
+      return post + separator + getCategoryObject().tags
     }
     let taggified = post
-    const tags = categories
-      .filter(category => category.name === selectedCategory)[0]
-      .tags.split(' ')
+    const tags = getCategoryObject().tags.split(' ')
     tags.forEach((tag, index) => {
       if (taggified.length + tag.length + 1 < limit) {
         let separator = ' '
@@ -164,12 +159,13 @@ const App = () => {
                         label={category.name}
                         name="category"
                         checked={
-                          selectedCategory === category.name ? true : false
+                          selectedCategory === category.id.toString()
+                            ? true
+                            : false
                         }
-                        value={category.name}
+                        value={category.id}
                         onChange={handleCategoryChange}
                       />
-                      <small></small>
                     </div>
                   )
                 })}
@@ -184,15 +180,22 @@ const App = () => {
         <Col className="pt-5">
           {networks.map(network => {
             if (network.selected) {
+              const taggified = taggify(network.characters)
               return (
                 <Form.Group key={network.name} className="pb-3">
                   <Form.Label className="font-weight-bold">
-                    {network.name} Post
+                    {network.name} Post{' '}
+                    {taggified.length > network.characters && (
+                      <small className="text-danger">
+                        (Your post text exceeds character limit by{' '}
+                        {taggified.length - network.characters}.)
+                      </small>
+                    )}
                   </Form.Label>
                   <Form.Control
                     as="textarea"
                     rows="10"
-                    value={taggify(network.characters)}
+                    value={taggified}
                     onChange={() => {}}
                   />
                 </Form.Group>
