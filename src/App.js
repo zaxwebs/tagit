@@ -22,7 +22,7 @@ const App = () => {
   }
 
   const getCategoryObject = (id = selectedCategory) => {
-    return categories.filter(category => category.id.toString() === id)[0] //skip type check here
+    return categories.filter(category => category.id.toString() === id)[0]
   }
 
   const toggleNetworkSelect = e => {
@@ -68,12 +68,10 @@ const App = () => {
   }
 
   const taggify = limit => {
+    let separator = ''
+    if (post !== '') separator = '\n'
     if (limit === null) {
-      if (post === '') {
-        return getCategoryObject().tags
-      } else {
-        return post + '\n' + getCategoryObject().tags
-      }
+      return post + separator + getCategoryObject().tags
     }
     let taggified = post
     const tags = getCategoryObject().tags.split(' ')
@@ -182,15 +180,21 @@ const App = () => {
         <Col className="pt-5">
           {networks.map(network => {
             if (network.selected) {
+              const taggified = taggify(network.characters)
               return (
                 <Form.Group key={network.name} className="pb-3">
                   <Form.Label className="font-weight-bold">
-                    {network.name} Post
+                    {network.name} Post{' '}
+                    {taggified.length > network.characters && (
+                      <small className="text-danger">
+                        (Your post text exceeds character limit)
+                      </small>
+                    )}
                   </Form.Label>
                   <Form.Control
                     as="textarea"
                     rows="10"
-                    value={taggify(network.characters)}
+                    value={taggified}
                     onChange={() => {}}
                   />
                 </Form.Group>
