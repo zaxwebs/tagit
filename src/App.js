@@ -7,7 +7,9 @@ const App = () => {
   const [post, setPost] = useState('')
   const [networks, setNetworks] = useState(initialNetworks)
   const [categories, setCategories] = useState(initialCategories)
-  const [selectedCategory, setSelectedCategory] = useState(categories[0].name)
+  const [selectedCategory, setSelectedCategory] = useState(
+    categories[0].id.toString()
+  )
   const [maxPostSize, setMaxPostSize] = useState(null)
 
   const getIndex = (value, arr, prop) => {
@@ -17,6 +19,10 @@ const App = () => {
       }
     }
     return -1 //to handle the case where the value doesn't exist
+  }
+
+  const getCategoryObject = (id = selectedCategory) => {
+    return categories.filter(category => category.id.toString() === id)[0] //skip type check here
   }
 
   const toggleNetworkSelect = e => {
@@ -64,22 +70,13 @@ const App = () => {
   const taggify = limit => {
     if (limit === null) {
       if (post === '') {
-        return categories.filter(
-          category => category.name === selectedCategory
-        )[0].tags
+        return getCategoryObject().tags
       } else {
-        return (
-          post +
-          '\n' +
-          categories.filter(category => category.name === selectedCategory)[0]
-            .tags
-        )
+        return post + '\n' + getCategoryObject().tags
       }
     }
     let taggified = post
-    const tags = categories
-      .filter(category => category.name === selectedCategory)[0]
-      .tags.split(' ')
+    const tags = getCategoryObject().tags.split(' ')
     tags.forEach((tag, index) => {
       if (taggified.length + tag.length + 1 < limit) {
         let separator = ' '
@@ -164,12 +161,13 @@ const App = () => {
                         label={category.name}
                         name="category"
                         checked={
-                          selectedCategory === category.name ? true : false
+                          selectedCategory === category.id.toString()
+                            ? true
+                            : false
                         }
-                        value={category.name}
+                        value={category.id}
                         onChange={handleCategoryChange}
                       />
-                      <small></small>
                     </div>
                   )
                 })}
