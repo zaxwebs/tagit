@@ -94,11 +94,18 @@ const App = () => {
     <Container>
       <Row>
         <Col className="pt-5">
-          <h1>Welcome to TagIt!</h1>
-          <p>
-            A tool to help you add hashtags to your posts while managing
-            character limits for different social networks.
-          </p>
+          <div id="intro">
+            <h1>Welcome to TagIt!</h1>
+            <p>
+              A tool to help you add hashtags to your posts while managing
+              character limits for different social networks.
+            </p>
+            <p>
+              TagIt automatically calculates just the right amount of hashtags
+              to add to your post for each of the selected social networks
+              keeping the character limit in check.
+            </p>
+          </div>
           <div>
             <Form>
               <Form.Group>

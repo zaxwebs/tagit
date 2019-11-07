@@ -8,6 +8,28 @@ html {
   }
 }
 
+body {
+  background: #f8f8f8;
+}
+
 .form-group {
+  margin-bottom: 2em;
+}
+
+#intro {
+  background: #1488cc; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2b32b2,
+    #1488cc
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2b32b2,
+    #1488cc
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  padding: 1em;
+  border-radius: 5px;
   margin-bottom: 2em;
 }
