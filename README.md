@@ -1,3 +1,7 @@
+# TagIt!
+A tool to help you add hashtags to your posts while managing character limits for different social networks.
+TagIt automatically calculates just the right amount of hashtags to add to your post for each of the selected social networks keeping the character limit in check.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
