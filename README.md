@@ -1,8 +1,10 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f99ca7ba-7de8-4e12-b473-c75e3815c496/deploy-status)](https://app.netlify.com/sites/tagit/deploys)
+
 # TagIt!
 A tool to help you add hashtags to your posts while managing character limits for different social networks.
 TagIt automatically calculates just the right amount of hashtags to add to your post for each of the selected social networks keeping the character limit in check.
 
-You can try it out here: https://tagitbyzax.herokuapp.com/
+You can try it out here: https://tagit.netlify.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
