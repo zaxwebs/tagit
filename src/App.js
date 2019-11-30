@@ -185,6 +185,9 @@ const App = () => {
 					</div>
 				</Col>
 				<Col md={6} className="pt-5">
+					<Form.Label className="font-weight-bold mb-3">
+						4. Copy Paste Tagged Posts to Respective Social Networks
+					</Form.Label>
 					{networks.map(network => {
 						if (network.selected) {
 							const taggified = taggify(network.characters)
