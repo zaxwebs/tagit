@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './App.css'
 import { Container, Row, Col, Form, Alert } from 'react-bootstrap'
 import { initialNetworks, initialCategories } from './data'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const App = () => {
 	const [post, setPost] = useState('')
@@ -208,6 +209,11 @@ const App = () => {
 										value={taggified}
 										onChange={() => {}}
 									/>
+									<CopyToClipboard text={taggified}>
+										<button className="btn btn-primary btn-sm mt-2">
+											Copy to Clipboard
+										</button>
+									</CopyToClipboard>
 								</Form.Group>
 							)
 						} else {
@@ -222,6 +228,11 @@ const App = () => {
 							value={taggify(null)}
 							onChange={() => {}}
 						/>
+						<CopyToClipboard text={taggify(null)}>
+							<button className="btn btn-primary btn-sm mt-2">
+								Copy to Clipboard
+							</button>
+						</CopyToClipboard>
 					</Form.Group>
 				</Col>
 			</Row>
