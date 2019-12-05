@@ -7,3 +7,21 @@ html {
 		font-family: 'Inter var', sans-serif;
 	}
 }
+
+.stage h4 {
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 1em;
+}
+
+.stage h4 span.number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #f3be14;
+	margin-right: 0.5rem;
+}
