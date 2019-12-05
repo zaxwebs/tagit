@@ -18,7 +18,7 @@ const CategoryStage = () => {
 										<div key={categoryID} className="mb-2">
 											<Form.Check
 												type="radio"
-												id={categoryID}
+												id={'category-' + categoryID}
 												checked={categoryID === selectedCategory}
 												label={category.name}
 												value={categoryID}

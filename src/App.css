@@ -8,11 +8,6 @@ html {
 	}
 }
 
-input[type='radio'] {
-	width: 1em;
-	height: 1em;
-}
-
 .stage h4 {
 	font-size: 16px;
 	font-weight: 700;

@@ -17,6 +17,7 @@ const NetworkStage = () => {
 									return (
 										<div key={networkID} className="mb-2">
 											<Form.Check
+												id={'network-' + networkID}
 												name={network.name}
 												checked={network.selected}
 												label={network.name}
