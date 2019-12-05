@@ -8,10 +8,22 @@ html {
 	}
 }
 
+input[type='radio'] {
+	width: 1em;
+	height: 1em;
+}
+
 .stage h4 {
 	font-size: 16px;
 	font-weight: 700;
 	margin-bottom: 1em;
+}
+
+.text-sub {
+	color: #6c757d;
+	font-size: 80%;
+	font-weight: 400;
+	margin-top: 0.25em;
 }
 
 .stage h4 span.number {

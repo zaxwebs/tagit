@@ -5,6 +5,8 @@ const AppContext = createContext()
 
 export const AppProvider = props => {
 	const [networks, setNetworks] = useState(initialNetworks)
+	const [content, setContent] = useState('')
+	const [selectedCategory, setSelectedCategory] = useState('webDesign')
 
 	const toggleNetworkSelect = networkID => {
 		const network = { ...networks[networkID] } // soft clone network
@@ -12,8 +14,26 @@ export const AppProvider = props => {
 		setNetworks({ ...networks, [networkID]: network })
 	}
 
+	const handleContentChange = e => {
+		setContent(e.target.value)
+	}
+
+	const handleCategorySelect = categoryID => {
+		setSelectedCategory(categoryID)
+	}
+
 	return (
-		<AppContext.Provider value={{ networks, categories, toggleNetworkSelect }}>
+		<AppContext.Provider
+			value={{
+				networks,
+				categories,
+				toggleNetworkSelect,
+				content,
+				handleContentChange,
+				selectedCategory,
+				handleCategorySelect
+			}}
+		>
 			{props.children}
 		</AppContext.Provider>
 	)

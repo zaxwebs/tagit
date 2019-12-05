@@ -24,11 +24,11 @@ const NetworkStage = () => {
 													toggleNetworkSelect(networkID)
 												}}
 											/>
-											<small className="form-text text-muted">
+											<div className="text-sub">
 												Allows up to {network.characters.toLocaleString()}{' '}
 												characters
 												{network.tags && ` & ${network.tags} tags`}.
-											</small>
+											</div>
 										</div>
 									)
 								})}
