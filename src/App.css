@@ -8,8 +8,18 @@ html {
 	}
 }
 
+body {
+	background: #333;
+	color: white;
+}
+
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+	cursor: pointer;
+}
+
 .stage h4 {
-	font-size: 16px;
+	font-size: 1.1em;
 	font-weight: 700;
 	margin-bottom: 1em;
 }
