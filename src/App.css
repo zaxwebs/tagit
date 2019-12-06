@@ -9,7 +9,13 @@ html {
 }
 
 body {
-	background: #f8f8f8;
+	background: #0f0f0f;
+	color: #fff;
+}
+
+textarea.form-control {
+	background: #0f0f0f !important;
+	color: #e6e6e6 !important;
 }
 
 input[type='checkbox'] + label,
@@ -28,7 +34,7 @@ input[type='radio'] + label {
 }
 
 .text-sub {
-	color: #6c757d;
+	color: #8a9299;
 	font-size: 80%;
 	font-weight: 400;
 	margin-top: 0.25em;
@@ -44,4 +50,20 @@ input[type='radio'] + label {
 	color: #fff;
 	background-color: #f3be14;
 	margin-right: 0.5rem;
+}
+
+.stats {
+	margin-bottom: 0.5em;
+}
+
+.stats span {
+	margin-right: 1em;
+}
+
+.stats span:last-child {
+	margin-right: 0;
+}
+
+.badge {
+	font-weight: 500;
 }

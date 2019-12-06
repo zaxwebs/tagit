@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Stage from '../Stage'
 import AppContext from '../../contexts/AppContext'
-import PostTagger from './../PostTagger'
+import PostTagged from '../PostTagged'
 import { Row, Col } from 'react-bootstrap'
 
 const PostStage = () => {
@@ -17,7 +17,7 @@ const PostStage = () => {
 
 						return (
 							<Col lg={6} key={networkID}>
-								<PostTagger
+								<PostTagged
 									label={network.name + ' Post'}
 									characters={network.characters}
 									tags={network.tags}
@@ -27,7 +27,7 @@ const PostStage = () => {
 					})}
 
 				<Col lg={6}>
-					<PostTagger label="Taggified Post" />
+					<PostTagged label="Taggified Post" />
 				</Col>
 			</Row>
 		</Stage>
