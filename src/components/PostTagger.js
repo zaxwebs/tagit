@@ -13,26 +13,49 @@ const PostTagger = props => {
 				let characterCount = content.length
 				let tagCount = extract(content, '#').length
 
-				const validCharacterCount = (characterCount = 0) => {
+				const validCharacterCount = (count = characterCount) => {
 					if (!props.characters) {
 						// if props.characters is falsy, make character limit infinite
 						return true
 					} else {
-						return characterCount < props.characters
+						return count < props.characters
 					}
 				}
 
-				const validTagCount = (tagCount = 0) => {
+				const validTagCount = (count = tagCount) => {
 					if (!props.tags) {
 						// if props.tags is falsy, make tags limit infinite
 						return true
 					} else {
-						return tagCount < props.tags
+						return count < props.tags
 					}
 				}
 
-				const validCounts = (characterCount = 0, tagCount = 0) => {
-					return validCharacterCount(characterCount) && validTagCount(tagCount)
+				const validCounts = (characters = characterCount, tags = tagCount) => {
+					console.log(
+						validCharacterCount(characters),
+						validTagCount(tags),
+						validCharacterCount(characters) && validTagCount(tags)
+					)
+					return validCharacterCount(characters) && validTagCount(tags)
+				}
+
+				const invalidAlertText = () => {
+					let message = 'Your post exceeds'
+					if (!validCharacterCount()) {
+						console.log('OK')
+						const exceeding = characterCount - props.characters
+						message = message + ' character limit by ' + exceeding
+						if (!validTagCount()) {
+							message = message + ' &'
+						}
+					}
+					if (!validTagCount()) {
+						const exceeding = tagCount - props.tags
+						message = message + ' tag limit by ' + exceeding
+					}
+					message = message + '.'
+					return message
 				}
 
 				const taggifyPost = () => {
@@ -66,11 +89,18 @@ const PostTagger = props => {
 					<Form onSubmit={e => e.preventDefault()}>
 						<Form.Group>
 							<label className="font-weight-bold">{props.label}</label>
+							{!validCounts() && (
+								<>
+									<br />
+									<small className="text-danger">{invalidAlertText()}</small>
+								</>
+							)}
 							<Form.Control
 								as="textarea"
 								rows="8"
 								value={taggifiedPost}
 								onChange={() => {}}
+								isInvalid={!validCounts()}
 							/>
 							<CopyToClipboard text={taggifiedPost}>
 								<button className="btn btn-primary btn-sm mt-2 mb-4">
