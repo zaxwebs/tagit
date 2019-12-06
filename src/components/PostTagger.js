@@ -31,11 +31,6 @@ const PostTagger = props => {
 	}
 
 	const validCounts = (characters = characterCount, tags = tagCount) => {
-		console.log(
-			validCharacterCount(characters),
-			validTagCount(tags),
-			validCharacterCount(characters) && validTagCount(tags)
-		)
 		return validCharacterCount(characters) && validTagCount(tags)
 	}
 
