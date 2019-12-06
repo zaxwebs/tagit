@@ -22,6 +22,7 @@ const PostStage = () => {
 									/>
 								)
 							})}
+						<PostTagger label="Taggified Post" />
 					</Stage>
 				)
 			}}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Form } from 'react-bootstrap'
 import AppContext from './../contexts/AppContext'
+import extract from 'mention-hashtag'
 
 const PostTagger = props => {
 	return (
@@ -9,18 +10,28 @@ const PostTagger = props => {
 				const category = categories[selectedCategory]
 
 				let characterCount = content.length
-				let tagCount = 0
+				let tagCount = extract(content, '#').length
 
-				const isInCountLimits = (characterCount = 0, tagCount = 0) => {
-					if (!props.tags) {
-						return characterCount < props.characters
+				const validCharacterCount = (characterCount = 0) => {
+					if (!props.characters) {
+						// if props.characters is falsy, make character limit infinite
+						return true
 					} else {
-						if (characterCount < props.characters && tagCount < props.tags) {
-							return true
-						} else {
-							return false
-						}
+						return characterCount < props.characters
 					}
+				}
+
+				const validTagCount = (tagCount = 0) => {
+					if (!props.tags) {
+						// if props.tags is falsy, make tags limit infinite
+						return true
+					} else {
+						return tagCount < props.tags
+					}
+				}
+
+				const validCounts = (characterCount = 0, tagCount = 0) => {
+					return validCharacterCount(characterCount) && validTagCount(tagCount)
 				}
 
 				const taggifyPost = () => {
@@ -29,7 +40,7 @@ const PostTagger = props => {
 					tags.forEach(tag => {
 						const newCharacterCount = characterCount + tag.length + 1 // + 1 for pre-padding a space or new line
 						const newTagCount = tagCount + 1
-						if (isInCountLimits(newCharacterCount, newTagCount)) {
+						if (validCounts(newCharacterCount, newTagCount)) {
 							//increment counters
 							characterCount += tag.length + 1
 							tagCount += 1

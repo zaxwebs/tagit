@@ -6187,6 +6187,11 @@ memory-fs@^0.5.0:
     errno "^0.1.3"
     readable-stream "^2.0.1"
 
+mention-hashtag@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/mention-hashtag/-/mention-hashtag-1.1.1.tgz#4840a6f07cb18e53a986fbe7b7f7413ac43f55f5"
+  integrity sha512-HfZC/W0L7YLPD/DLiBMnWEWBZTTyeSbK/sQcw7v91O+75XOR+cAWsO0fTWEyFosNdxtDgGVOiUJ0Qi/fHNWLfg==
+
 merge-deep@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.2.tgz#f39fa100a4f1bd34ff29f7d2bf4508fbb8d83ad2"
