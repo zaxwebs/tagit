@@ -9,7 +9,7 @@ const ContentStage = () => {
 			{({ content, handleContentChange }) => {
 				return (
 					<Stage number="2" title="Enter Your Post Text Here">
-						<Form>
+						<Form onSubmit={e => e.preventDefault()}>
 							<Form.Group>
 								<Form.Control
 									as="textarea"

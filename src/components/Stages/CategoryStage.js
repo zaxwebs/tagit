@@ -9,7 +9,7 @@ const CategoryStage = () => {
 			{({ categories, handleCategorySelect, selectedCategory }) => {
 				return (
 					<Stage number="3" title="Select a Category">
-						<Form>
+						<Form onSubmit={e => e.preventDefault()}>
 							<Form.Group>
 								{Object.keys(categories).map(categoryID => {
 									const category = categories[categoryID]

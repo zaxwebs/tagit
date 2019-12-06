@@ -2,6 +2,7 @@ import React from 'react'
 import { Form } from 'react-bootstrap'
 import AppContext from './../contexts/AppContext'
 import extract from 'mention-hashtag'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 const PostTagger = props => {
 	return (
@@ -62,7 +63,7 @@ const PostTagger = props => {
 				const taggifiedPost = taggifyPost()
 
 				return (
-					<Form>
+					<Form onSubmit={e => e.preventDefault()}>
 						<Form.Group>
 							<label className="font-weight-bold">{props.label}</label>
 							<Form.Control
@@ -71,6 +72,11 @@ const PostTagger = props => {
 								value={taggifiedPost}
 								onChange={() => {}}
 							/>
+							<CopyToClipboard text={taggifiedPost}>
+								<button className="btn btn-primary btn-sm mt-2 mb-4">
+									Copy to Clipboard
+								</button>
+							</CopyToClipboard>
 						</Form.Group>
 					</Form>
 				)

@@ -10,14 +10,14 @@ import PostStage from './components/Stages/PostStage'
 const App = () => {
 	return (
 		<AppProvider>
-			<Container>
+			<Container fluid={true}>
 				<Row>
-					<Col md={6} className="pt-5">
+					<Col lg={4} className="pt-5">
 						<NetworkStage />
 						<ContentStage />
 						<CategoryStage />
 					</Col>
-					<Col md={6} className="pt-5">
+					<Col lg={8} className="pt-5">
 						<PostStage />
 					</Col>
 				</Row>

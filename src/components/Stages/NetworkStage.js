@@ -9,7 +9,7 @@ const NetworkStage = () => {
 			{({ networks, toggleNetworkSelect }) => {
 				return (
 					<Stage number="1" title="Select Social Networks">
-						<Form>
+						<Form onSubmit={e => e.preventDefault()}>
 							<Form.Group>
 								{Object.keys(networks).map(networkID => {
 									const network = networks[networkID]
