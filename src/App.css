@@ -8,21 +8,6 @@ html {
 	}
 }
 
-body {
-	background: #0f0f0f;
-	color: #fff;
-}
-
-textarea.form-control {
-	background: #0f0f0f !important;
-	color: #e6e6e6 !important;
-}
-
-input[type='checkbox'] + label,
-input[type='radio'] + label {
-	cursor: pointer;
-}
-
 .stage {
 	margin-bottom: 2em;
 }
@@ -66,4 +51,21 @@ input[type='radio'] + label {
 
 .badge {
 	font-weight: 500;
+}
+
+/* dark mode styles */
+.dark {
+	background: #0f0f0f;
+	color: #fff;
+	min-height: 100vh;
+}
+
+.dark textarea.form-control {
+	background: #0f0f0f !important;
+	color: #e6e6e6 !important;
+}
+
+.dark input[type='checkbox'] + label,
+.dark input[type='radio'] + label {
+	cursor: pointer;
 }

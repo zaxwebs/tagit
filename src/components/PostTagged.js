@@ -40,14 +40,15 @@ const PostTagged = props => {
 	}
 
 	const taggifiedPost = taggifyPost()
+
 	return (
 		<Form onSubmit={e => e.preventDefault()}>
 			<Form.Group>
 				<label className="font-weight-bold">{props.label}</label>
 				<PostStats
 					content={taggifiedPost}
-					characters={props.characters}
-					tags={props.characters}
+					characters={characters}
+					tags={tags}
 				/>
 				<Form.Control
 					as="textarea"

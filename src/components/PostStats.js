@@ -40,14 +40,17 @@ const PostStats = props => {
 				pill
 				variant={
 					validCharacterCount(characterCount(content), characters)
-						? 'primary'
+						? 'success'
 						: 'danger'
 				}
 			>
 				Characters - {characterCount(content).toLocaleString()}
 				{characters && ' / ' + characters.toLocaleString()}
 			</Badge>
-			<Badge pill variant="primary">
+			<Badge
+				pill
+				variant={validTagCount(tagCount(content), tags) ? 'success' : 'danger'}
+			>
 				Tags - {tagCount(content).toLocaleString()}
 				{tags && ' / ' + tags.toLocaleString()}
 			</Badge>
