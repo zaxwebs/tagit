@@ -3,7 +3,11 @@ import { Form } from 'react-bootstrap'
 import AppContext from '../contexts/AppContext'
 import extract from 'mention-hashtag'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-import PostStats, { validCounts } from './PostStats'
+import PostStats, {
+	validCounts,
+	validCharacterCount,
+	validTagCount
+} from './PostStats'
 
 const PostTagged = props => {
 	const { content, categories, selectedCategory } = useContext(AppContext)
@@ -16,8 +20,8 @@ const PostTagged = props => {
 
 	const taggifyPost = () => {
 		let tagged = content
-		const tags = category.tags.split(' ')
-		tags.forEach(tag => {
+		const tagsArray = category.tags.split(' ')
+		tagsArray.forEach(tag => {
 			const newCharacterCount = characterCount + tag.length + 1 // + 1 for pre-padding a space or new line
 			const newTagCount = tagCount + 1
 			if (validCounts(newCharacterCount, newTagCount, characters, tags)) {

@@ -29,7 +29,10 @@ export const validTagCount = (count, max) => {
 }
 
 export const validCounts = (characters, tags, maxCharacters, maxTags) => {
-	return validCharacterCount(characters, maxCharacters, tags, maxTags)
+	return (
+		validCharacterCount(characters, maxCharacters) &&
+		validTagCount(tags, maxTags)
+	)
 }
 
 const PostStats = props => {

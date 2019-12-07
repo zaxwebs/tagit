@@ -56,13 +56,13 @@ html {
 /* dark mode styles */
 .dark {
 	background: #0f0f0f;
-	color: #fff;
+	color: #c5c5c5;
 	min-height: 100vh;
 }
 
 .dark textarea.form-control {
 	background: #0f0f0f !important;
-	color: #e6e6e6 !important;
+	color: #c0c0c0 !important;
 }
 
 .dark input[type='checkbox'] + label,
