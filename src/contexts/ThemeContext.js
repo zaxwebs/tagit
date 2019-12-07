@@ -9,7 +9,9 @@ export const ThemeProvider = props => {
 		if (localStorage.getItem('isDark') === null) {
 			return isDark
 		} else {
-			return JSON.parse(localStorage.getItem('isDark'))
+			const current = JSON.parse(localStorage.getItem('isDark'))
+			setDark(current)
+			return current
 		}
 	}
 
@@ -24,7 +26,7 @@ export const ThemeProvider = props => {
 	}
 
 	return (
-		<ThemeContext.Provider value={{ toggleDark, getThemeClass }}>
+		<ThemeContext.Provider value={{ getDark, toggleDark, getThemeClass }}>
 			{props.children}
 		</ThemeContext.Provider>
 	)
