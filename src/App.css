@@ -1,35 +1,91 @@
 @import url('https://rsms.me/inter/inter.css');
 html {
-  font-family: 'Inter', sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 @supports (font-variation-settings: normal) {
-  * {
-    font-family: 'Inter var', sans-serif;
-  }
+	* {
+		font-family: 'Inter var', sans-serif;
+	}
 }
 
 body {
-  background: #f8f8f8;
+	background: #f8f8f8;
 }
 
-.form-group {
-  margin-bottom: 2em;
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+	cursor: pointer;
 }
 
-#intro {
-  background: #1488cc; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2b32b2,
-    #1488cc
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2b32b2,
-    #1488cc
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #fff;
-  padding: 1em;
-  border-radius: 5px;
-  margin-bottom: 2em;
+.cover {
+	color: #fff;
+	background: #017bff;
+	text-align: center;
+	padding: 0.5em 0;
+}
+
+.stage {
+	margin-bottom: 2em;
+}
+
+.stage h4 {
+	font-size: 1.1em;
+	font-weight: 700;
+	margin-bottom: 1em;
+}
+
+.text-sub {
+	color: #8a9299;
+	font-size: 80%;
+	font-weight: 400;
+	margin-top: 0.25em;
+}
+
+.stage h4 span.number {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #f3be14;
+	margin-right: 0.5rem;
+}
+
+.stats {
+	margin-bottom: 0.5em;
+}
+
+.stats span {
+	margin-right: 1em;
+}
+
+.stats span:last-child {
+	margin-right: 0;
+}
+
+.badge {
+	font-weight: 500;
+}
+
+/* dark mode styles */
+.dark {
+	background: #0f0f0f;
+	color: #c5c5c5;
+	min-height: 100vh;
+}
+
+.dark textarea.form-control {
+	background: #0f0f0f !important;
+	color: #c0c0c0 !important;
+}
+
+.dark .cover {
+	background: #082e6d;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .btn-primary {
+	background: #082e6d;
 }

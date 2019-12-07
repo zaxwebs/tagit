@@ -1,6 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import App from './App'
+import { AppProvider } from './contexts/AppContext'
+import { ThemeProvider } from './contexts/ThemeContext'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+	<AppProvider>
+		<ThemeProvider>
+			<App />
+		</ThemeProvider>
+	</AppProvider>,
+	document.getElementById('root')
+)
