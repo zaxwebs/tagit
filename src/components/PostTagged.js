@@ -3,11 +3,7 @@ import { Form } from 'react-bootstrap'
 import AppContext from '../contexts/AppContext'
 import extract from 'mention-hashtag'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-import PostStats, {
-	validCounts,
-	validCharacterCount,
-	validTagCount
-} from './PostStats'
+import PostStats, { validCounts } from './PostStats'
 
 const PostTagged = props => {
 	const { content, categories, selectedCategory } = useContext(AppContext)
