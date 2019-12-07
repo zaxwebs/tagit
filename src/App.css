@@ -69,6 +69,10 @@ input[type='radio'] + label {
 	font-weight: 500;
 }
 
+.badge-success {
+	background: #27a76b;
+}
+
 /* dark mode styles */
 .dark {
 	background: #0f0f0f;
