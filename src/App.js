@@ -13,6 +13,13 @@ const App = () => {
 	return (
 		<div className={getThemeClass()}>
 			<Menu />
+			<div className="cover">
+				<Container>
+					TagIt automatically calculates just the right amount of hashtags to
+					add to your post for each of the selected social networks keeping the
+					character & hashtag limits in check.
+				</Container>
+			</div>
 			<Container fluid={true}>
 				<Row>
 					<Col lg={4} className="pt-5">

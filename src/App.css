@@ -17,6 +17,13 @@ input[type='radio'] + label {
 	cursor: pointer;
 }
 
+.cover {
+	color: #fff;
+	background: #017bff;
+	text-align: center;
+	padding: 0.5em 0;
+}
+
 .stage {
 	margin-bottom: 2em;
 }
@@ -72,4 +79,13 @@ input[type='radio'] + label {
 .dark textarea.form-control {
 	background: #0f0f0f !important;
 	color: #c0c0c0 !important;
+}
+
+.dark .cover {
+	background: #082e6d;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .btn-primary {
+	background: #082e6d;
 }
