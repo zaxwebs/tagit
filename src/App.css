@@ -8,6 +8,15 @@ html {
 	}
 }
 
+body {
+	background: #f8f8f8;
+}
+
+input[type='checkbox'] + label,
+input[type='radio'] + label {
+	cursor: pointer;
+}
+
 .stage {
 	margin-bottom: 2em;
 }
@@ -63,9 +72,4 @@ html {
 .dark textarea.form-control {
 	background: #0f0f0f !important;
 	color: #c0c0c0 !important;
-}
-
-.dark input[type='checkbox'] + label,
-.dark input[type='radio'] + label {
-	cursor: pointer;
 }
