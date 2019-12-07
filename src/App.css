@@ -89,3 +89,24 @@ input[type='radio'] + label {
 .dark .btn-primary {
 	background: #082e6d;
 }
+
+/* responsive styles */
+@media screen and (min-width: 768px) {
+	.stage {
+		padding: 20px 15px;
+		border-radius: 5px;
+		background: #fff;
+		border: 1px solid #c6d6e9;
+	}
+
+	.dark .stage {
+		background: #15181d;
+		border: 1px solid #1c222c;
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	.stage {
+		padding: 20px 20px;
+	}
+}
