@@ -17,6 +17,10 @@ input[type='radio'] + label {
 	cursor: pointer;
 }
 
+svg {
+	padding-bottom: 0.1em;
+}
+
 .cover {
 	color: #fff;
 	background: #017bff;

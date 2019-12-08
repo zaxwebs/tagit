@@ -4,6 +4,7 @@ import AppContext from '../contexts/AppContext'
 import extract from 'mention-hashtag'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import PostStats, { validCounts } from './PostStats'
+import { MdContentCopy } from 'react-icons/md'
 
 const PostTagged = props => {
 	const { content, categories, selectedCategory } = useContext(AppContext)
@@ -59,7 +60,7 @@ const PostTagged = props => {
 				/>
 				<CopyToClipboard text={taggifiedPost}>
 					<button className="btn btn-primary btn-sm mt-2 mb-4">
-						Copy to Clipboard
+						<MdContentCopy /> Copy to Clipboard
 					</button>
 				</CopyToClipboard>
 			</Form.Group>
