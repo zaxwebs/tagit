@@ -58,7 +58,7 @@ export const categories = {
     tags:
       '#hotel #travel #restaurant #luxury #hotels #holiday #resort #vacation #love #bar #design #spa #food #instagood #summer #architecture #like #photography #indonesia #interiordesign #tourism #travelgram #instagram #relax #cafe #hotelroom #lifestyle #turismo',
   },
-  webDesign: {
+  writing: {
     name: 'Writing',
     tags:
       '#creativewriting #instagood #book #authors #poetry #poets #follow #writingprompts #story #writinginspiration #like #writings #literature #creative #writersnetwork #writingtips #novel #writingcommunity #writerforhire',
